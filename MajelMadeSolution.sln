@@ -1,9 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MajelMade.api", "MajelMade.api\MajelMade.api.csproj", "{5EB6D290-3749-47AD-8304-5E04AAEA47E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{67742A70-ED79-43EE-9362-472DCED7351F} = {67742A70-ED79-43EE-9362-472DCED7351F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MajelMade.Domain", "MajelMade.Domain\MajelMade.Domain.csproj", "{30F635F4-6E66-40A7-8CD1-8D9DE273E11F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MajelMade.Data", "MajelMade.Data\MajelMade.Data.csproj", "{5F7E9D59-A47C-4468-B8C0-A6F99EB2A62A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MajelMade.Tests", "MajelMade.Tests\MajelMade.Tests.csproj", "{33A05E13-6AE2-4F34-81CB-E064E8D4471E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MajelMade.BusinessLogic", "MajelMade.BusinessLogic\MajelMade.BusinessLogic.csproj", "{67742A70-ED79-43EE-9362-472DCED7351F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30F635F4-6E66-40A7-8CD1-8D9DE273E11F} = {30F635F4-6E66-40A7-8CD1-8D9DE273E11F}
+		{5F7E9D59-A47C-4468-B8C0-A6F99EB2A62A} = {5F7E9D59-A47C-4468-B8C0-A6F99EB2A62A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +30,22 @@ Global
 		{5EB6D290-3749-47AD-8304-5E04AAEA47E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EB6D290-3749-47AD-8304-5E04AAEA47E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EB6D290-3749-47AD-8304-5E04AAEA47E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F635F4-6E66-40A7-8CD1-8D9DE273E11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F635F4-6E66-40A7-8CD1-8D9DE273E11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F635F4-6E66-40A7-8CD1-8D9DE273E11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F635F4-6E66-40A7-8CD1-8D9DE273E11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7E9D59-A47C-4468-B8C0-A6F99EB2A62A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7E9D59-A47C-4468-B8C0-A6F99EB2A62A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7E9D59-A47C-4468-B8C0-A6F99EB2A62A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7E9D59-A47C-4468-B8C0-A6F99EB2A62A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A05E13-6AE2-4F34-81CB-E064E8D4471E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A05E13-6AE2-4F34-81CB-E064E8D4471E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A05E13-6AE2-4F34-81CB-E064E8D4471E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A05E13-6AE2-4F34-81CB-E064E8D4471E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67742A70-ED79-43EE-9362-472DCED7351F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67742A70-ED79-43EE-9362-472DCED7351F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67742A70-ED79-43EE-9362-472DCED7351F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67742A70-ED79-43EE-9362-472DCED7351F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
