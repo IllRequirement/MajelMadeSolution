@@ -15,7 +15,7 @@ namespace MajelMade.Data.Repositories.Interfaces
         // Optionally, you could include additional methods, for example:
         Task<IEnumerable<Recipe>> GetAllAsync();
 
-        Task LogRecipeStepAsync();
+        Task LogRecipeStepAsync(int recipeId, RecipeStepLog log);
 
         // Saves changes to the data store.
         Task SaveAsync();

@@ -19,9 +19,9 @@ namespace MajelMade.BusinessLogic.Services
             return await _recipeRepository.GetByIdAsync(recipeId);
         }
 
-        public async Task LogRecipeStepAsync(RecipeStepLog log)
+        public async Task LogRecipeStepAsync(int recipeId, RecipeStepLog log)
         {
-            await _recipeRepository.LogRecipeStepAsync(log);
+            await _recipeRepository.LogRecipeStepAsync(recipeId, log);
         }
     }
 }

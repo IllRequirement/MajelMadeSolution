@@ -7,8 +7,9 @@ using MajelMade.Data.Repositories.Interfaces;
 
 namespace MajelMade.Data.Repositories.Implementations
 {
-    public class RecipeRepository(MajelMadeDbContext _context) : IRecipeRepository
+    public class RecipeRepository : IRecipeRepository
     {
+        private readonly MajelMadeDbContext _context;
         public async Task AddAsync(Recipe recipe)
         {
             await _context.Recipes.AddAsync(recipe);
@@ -22,6 +23,17 @@ namespace MajelMade.Data.Repositories.Implementations
                 .Include(r => r.RecipeIngredients)
                 .Include(r => r.RecipeEquipment)
                 .FirstOrDefaultAsync(r => r.RecipeID == recipeId);
+        }
+
+        public async Task LogRecipeStepAsync(int recipeId, RecipeStepLog log)
+        {
+            var recipe = await _context.Recipes.Include(r => r.Steps)
+                                               .FirstOrDefaultAsync(r => r.Id == recipeId);
+            if (recipe == null) throw new ArgumentException("Recipe not found.");
+
+            log.RecipeId = recipeId;
+            await _context.RecipeStepLogs.AddAsync(log);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Recipe>> GetAllAsync()

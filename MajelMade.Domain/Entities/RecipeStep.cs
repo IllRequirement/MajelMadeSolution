@@ -9,7 +9,7 @@
         public decimal EstimatedTimeMinutes { get; set; }
         public decimal EstimatedCost { get; set; }
         public string? AdditionalNotes { get; set; }
-
+        public ICollection<RecipeStep> RecipeSteps { get; set; } = new List<RecipeStep>();
         public required Recipe Recipe { get; set; }
     }
 }

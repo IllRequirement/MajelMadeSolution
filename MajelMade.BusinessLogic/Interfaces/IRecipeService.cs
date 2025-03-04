@@ -7,6 +7,6 @@ namespace MajelMade.BusinessLogic.Interfaces
     {
         Task<Recipe> AddRecipeAsync(Recipe recipe);
         Task<Recipe?> GetRecipeAsync(int recipeId);  // Allow null if not found
-        Task LogRecipeStepAsync(RecipeStepLog log);
+        Task LogRecipeStepAsync(int recipeId, RecipeStepLog log);
     }
 }
