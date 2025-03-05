@@ -12,6 +12,8 @@ namespace MajelMade.Domain.Entities
         public int ExecutedByUserID { get; set; }
         public required string Comments { get; set; }
 
+        // Navigation property
+        public Recipe Recipe { get; set; } = null!;
         public required RecipeStep RecipeStep { get; set; }
     }
 }
