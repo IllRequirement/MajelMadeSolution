@@ -48,7 +48,7 @@ namespace MajelMade.Data.Repositories.Implementations
 
         public async Task<IEnumerable<Order>> GetOrdersByCustomerIdAsync(int customerId)
         {
-            return await _context.Orders.Where(o => o.CustomerId == customerId).ToListAsync();
+            return await _context.Orders.Where(o => o.CustomerID == customerId).ToListAsync();
         }
     }
 }

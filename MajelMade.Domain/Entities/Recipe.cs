@@ -17,6 +17,7 @@ namespace MajelMade.Domain.Entities
         // Navigation properties
         public ICollection<RecipeIngredient> RecipeIngredients { get; set; } = new List<RecipeIngredient>();
         public ICollection<RecipeEquipment> RecipeEquipment { get; set; } = new List<RecipeEquipment>();
+        public ICollection<RecipeStep> RecipeSteps { get; set; } = new List<RecipeStep>();
         public ICollection<RecipeStepLog> RecipeStepLogs { get; set; } = new List<RecipeStepLog>();
 
         public User User { get; set; } = null!;
