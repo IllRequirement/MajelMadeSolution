@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace MajelMade.Domain.Entities
+﻿namespace MajelMade.Domain.Entities
 {
-    public class InventoryCategory
+    public class InventoryCategory(int inventoryCategoryID, string categoryName, string description)
     {
-        public int InventoryCategoryID { get; set; }
-        public required string CategoryName { get; set; }
-        public required string Description { get; set; }
+        public int InventoryCategoryID { get; set; } = inventoryCategoryID;
+        public string CategoryName { get; set; } = categoryName;
+        public string Description { get; set; } = description;
+
         public ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
     }
 }

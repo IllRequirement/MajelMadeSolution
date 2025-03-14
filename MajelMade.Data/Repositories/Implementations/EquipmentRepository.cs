@@ -47,18 +47,18 @@ namespace MajelMade.Data.Repositories.Implementations
                 throw new InvalidOperationException("Invalid equipment or log type.");
             }
 
-            var log = new EquipmentLog
-            {
-                EquipmentID = equipmentId,
-                Equipment = equipment,  // ✅ Required member
-                EquipmentLogTypeID = 2,
-                EquipmentLogType = logType, // ✅ Required member
-                Duration = (decimal)(endTime - startTime).TotalMinutes,
-                Cost = 0,
-                Notes = $"Used in Recipe ID: {recipeId}"
-            };
+            //var log = new EquipmentLog
+            //{
+            //    EquipmentID = equipmentId,
+            //    Equipment = equipment,  // ✅ Required member
+            //    EquipmentLogTypeID = 2,
+            //    EquipmentLogType = logType, // ✅ Required member
+            //    Duration = (decimal)(endTime - startTime).TotalMinutes,
+            //    Cost = 0,
+            //    Notes = $"Used in Recipe ID: {recipeId}"
+            //};
 
-            _context.EquipmentLogs.Add(log);
+            //_context.EquipmentLogs.Add(log);
             await _context.SaveChangesAsync();
         }
     }

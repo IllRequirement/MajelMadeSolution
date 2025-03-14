@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-
-namespace MajelMade.Domain.Entities
+﻿namespace MajelMade.Domain.Entities
 {
-    public class EquipmentStatus
+    public class EquipmentStatus(int equipmentStatusID, string statusName)
     {
-        public int EquipmentStatusID { get; set; }
-        public required string StatusName { get; set; }
+        public int EquipmentStatusID { get; set; } = equipmentStatusID;
+        public string StatusName { get; set; } = statusName;
+
         public ICollection<Equipment> Equipment { get; set; } = new List<Equipment>();
     }
 }

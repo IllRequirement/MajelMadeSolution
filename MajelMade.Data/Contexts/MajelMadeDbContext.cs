@@ -63,12 +63,13 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.AddressTypeID);
                 entity.Property(e => e.TypeName).IsRequired();
                 entity.HasData(
-                    new AddressType { AddressTypeID = 1, TypeName = "Home" },
-                    new AddressType { AddressTypeID = 2, TypeName = "Work" },
-                    new AddressType { AddressTypeID = 3, TypeName = "Billing" },
-                    new AddressType { AddressTypeID = 4, TypeName = "Shipping" },
-                    new AddressType { AddressTypeID = 5, TypeName = "Other" }
+                    new AddressType(1, "Home"),
+                    new AddressType(2, "Work"),
+                    new AddressType(3, "Billing"),
+                    new AddressType(4, "Shipping"),
+                    new AddressType(5, "Other")
                 );
+
             });
 
             // Customer
@@ -145,11 +146,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.EmailTypeID);
                 entity.Property(e => e.TypeName).IsRequired();
                 entity.HasData(
-                     new EmailType { EmailTypeID = 1, TypeName = "Personal" },
-                     new EmailType { EmailTypeID = 2, TypeName = "Work" },
-                     new EmailType { EmailTypeID = 3, TypeName = "School" },
-                     new EmailType { EmailTypeID = 4, TypeName = "Other" },
-                     new EmailType { EmailTypeID = 5, TypeName = "Family" }
+                     new EmailType (1, "Personal"),
+                     new EmailType (2, "Work"),
+                     new EmailType (3, "School"),
+                     new EmailType (4, "Other"),
+                     new EmailType (5, "Family")
                 );
             });
 
@@ -175,11 +176,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.EmployeePositionID);
                 entity.Property(e => e.PositionName).IsRequired();
                 entity.HasData(
-                    new EmployeePosition { EmployeePositionID = 1, PositionName = "Cook" },
-                    new EmployeePosition { EmployeePositionID = 2, PositionName = "Server" },
-                    new EmployeePosition { EmployeePositionID = 3, PositionName = "Manager" },
-                    new EmployeePosition { EmployeePositionID = 4, PositionName = "Chef" },
-                    new EmployeePosition { EmployeePositionID = 5, PositionName = "Delivery" }
+                    new EmployeePosition (1, "Cook"),
+                    new EmployeePosition (2, "Server"),
+                    new EmployeePosition (3, "Manager"),
+                    new EmployeePosition (4, "Chef"),
+                    new EmployeePosition (5, "Delivery")
                 );
             });
 
@@ -233,11 +234,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.EquipmentLogTypeID);
                 entity.Property(e => e.LogTypeName).IsRequired();
                 entity.HasData(
-                    new EquipmentLogType { EquipmentLogTypeID = 1, LogTypeName = "Maintenance" },
-                    new EquipmentLogType { EquipmentLogTypeID = 2, LogTypeName = "Repair" },
-                    new EquipmentLogType { EquipmentLogTypeID = 3, LogTypeName = "Inspection" },
-                    new EquipmentLogType { EquipmentLogTypeID = 4, LogTypeName = "Calibration" },
-                    new EquipmentLogType { EquipmentLogTypeID = 5, LogTypeName = "Upgrade" }
+                    new EquipmentLogType (2, "Repair"),
+                    new EquipmentLogType (1, "Maintenance"),
+                    new EquipmentLogType (3, "Inspection"),
+                    new EquipmentLogType (4, "Calibration"),
+                    new EquipmentLogType (5, "Upgrade")
                 );
             });
 
@@ -247,11 +248,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.EquipmentStatusID);
                 entity.Property(e => e.StatusName).IsRequired();
                 entity.HasData(
-                    new EquipmentStatus { EquipmentStatusID = 1, StatusName = "In Service" },
-                    new EquipmentStatus { EquipmentStatusID = 2, StatusName = "Under Repair" },
-                    new EquipmentStatus { EquipmentStatusID = 3, StatusName = "Out of Service" },
-                    new EquipmentStatus { EquipmentStatusID = 4, StatusName = "Maintenance Required" },
-                    new EquipmentStatus { EquipmentStatusID = 5, StatusName = "Retired" }
+                    new EquipmentStatus (1, "In Service"),
+                    new EquipmentStatus (2, "Under Repair"),
+                    new EquipmentStatus (3, "Out of Service"),
+                    new EquipmentStatus (4, "Maintenance Required"),
+                    new EquipmentStatus (5, "Retired")
                 );
             });
 
@@ -261,11 +262,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.InventoryCategoryID);
                 entity.Property(e => e.CategoryName).IsRequired();
                 entity.HasData(
-                    new InventoryCategory { InventoryCategoryID = 1, CategoryName = "Meat", Description = "Animal meat products" },
-                    new InventoryCategory { InventoryCategoryID = 2, CategoryName = "Dairy", Description = "Milk, cheese, and related products" },
-                    new InventoryCategory { InventoryCategoryID = 3, CategoryName = "Vegetable", Description = "Fresh vegetables" },
-                    new InventoryCategory { InventoryCategoryID = 4, CategoryName = "Grain", Description = "Cereals and grain products" },
-                    new InventoryCategory { InventoryCategoryID = 5, CategoryName = "Fruit", Description = "Fresh fruit" }
+                    new InventoryCategory (1, "Meat", "Animal meat products"),
+                    new InventoryCategory (2, "Dairy", "Milk, cheese, and related products"),
+                    new InventoryCategory (3, "Vegetable", "Fresh vegetables"),
+                    new InventoryCategory (4, "Grain", "Cereals and grain products"),
+                    new InventoryCategory (5, "Fruit", "Fresh fruit")
                 );
             });
 
@@ -362,11 +363,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.InventoryTransactionTypeID);
                 entity.Property(e => e.TransactionTypeName).IsRequired();
                 entity.HasData(
-                    new InventoryTransactionType { InventoryTransactionTypeID = 1, TransactionTypeName = "Add" },
-                    new InventoryTransactionType { InventoryTransactionTypeID = 2, TransactionTypeName = "Subtract" },
-                    new InventoryTransactionType { InventoryTransactionTypeID = 3, TransactionTypeName = "Adjustment" },
-                    new InventoryTransactionType { InventoryTransactionTypeID = 4, TransactionTypeName = "Transfer" },
-                    new InventoryTransactionType { InventoryTransactionTypeID = 5, TransactionTypeName = "Return" }
+                    new InventoryTransactionType (1, "Add"),
+                    new InventoryTransactionType (2, "Subtract"),
+                    new InventoryTransactionType (3, "Adjustment"),
+                    new InventoryTransactionType (4, "Transfer"),
+                    new InventoryTransactionType (5, "Return")
                 );
             });
 
@@ -399,11 +400,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.MeasurementUnitID);
                 entity.Property(e => e.UnitName).IsRequired();
                 entity.HasData(
-                    new MeasurementUnit { MeasurementUnitID = 1, UnitName = "lb" },
-                    new MeasurementUnit { MeasurementUnitID = 2, UnitName = "each" },
-                    new MeasurementUnit { MeasurementUnitID = 3, UnitName = "kg" },
-                    new MeasurementUnit { MeasurementUnitID = 4, UnitName = "liters" },
-                    new MeasurementUnit { MeasurementUnitID = 5, UnitName = "gallon" }
+                    new MeasurementUnit (1, "lb"),
+                    new MeasurementUnit (2, "each"),
+                    new MeasurementUnit (3, "kg"),
+                    new MeasurementUnit (4, "liters"),
+                    new MeasurementUnit (5, "gallon")
                 );
             });
 
@@ -413,11 +414,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.ModificationTypeID);
                 entity.Property(e => e.ModificationName).IsRequired();
                 entity.HasData(
-                    new ModificationType { ModificationTypeID = 1, ModificationName = "Extra Sauce" },
-                    new ModificationType { ModificationTypeID = 2, ModificationName = "No Salt" },
-                    new ModificationType { ModificationTypeID = 3, ModificationName = "Gluten-Free" },
-                    new ModificationType { ModificationTypeID = 4, ModificationName = "Extra Cheese" },
-                    new ModificationType { ModificationTypeID = 5, ModificationName = "Spicy" }
+                    new ModificationType (1, "Extra Sauce"),
+                    new ModificationType (2, "No Salt"),
+                    new ModificationType (3, "Gluten-Free"),
+                    new ModificationType (4, "Extra Cheese"),
+                    new ModificationType (5, "Spicy")
                 );
             });
 
@@ -535,7 +536,6 @@ namespace MajelMade.Data.Contexts
                       .WithMany()
                       .HasForeignKey(pd => pd.PackedByUserID)
                       .OnDelete(DeleteBehavior.Restrict);
-                entity.Property(pd => pd.TotalPackedItems).IsRequired();
               //  entity.HasData(
               //      new PackingDetails { PackingID = 1, OrderID = 1, PackedByUserID = 1, StartPackingTime = new DateTime(2023, 2, 1, 12, 30, 0), EndPackingTime = new DateTime(2023, 2, 1, 12, 45, 0), TotalPackedItems = 2, Order = null!, PackedByUser = null! },
               //      new PackingDetails { PackingID = 2, OrderID = 2, PackedByUserID = 2, StartPackingTime = new DateTime(2023, 2, 2, 13, 0, 0), EndPackingTime = new DateTime(2023, 2, 2, 13, 15, 0), TotalPackedItems = 1, Order = null!, PackedByUser = null! },
@@ -552,11 +552,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.PhoneTypeID);
                 entity.Property(e => e.TypeName).IsRequired();
                 entity.HasData(
-                    new PhoneType { PhoneTypeID = 1, TypeName = "Home" },
-                    new PhoneType { PhoneTypeID = 2, TypeName = "Mobile" },
-                    new PhoneType { PhoneTypeID = 3, TypeName = "Work" },
-                    new PhoneType { PhoneTypeID = 4, TypeName = "Fax" },
-                    new PhoneType { PhoneTypeID = 5, TypeName = "Other" }
+                    new PhoneType (1, "Home"),
+                    new PhoneType (2, "Mobile"),
+                    new PhoneType (3, "Work"),
+                    new PhoneType (4, "Fax"),
+                    new PhoneType (5, "Other")
                 );
             });
 
@@ -566,11 +566,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.OrderTypeID);
                 entity.Property(e => e.TypeName).IsRequired();
                 entity.HasData(
-                    new OrderType { OrderTypeID = 1, TypeName = "Dine-In" },
-                    new OrderType { OrderTypeID = 2, TypeName = "Pickup" },
-                    new OrderType { OrderTypeID = 3, TypeName = "Delivery" },
-                    new OrderType { OrderTypeID = 4, TypeName = "Catering" },
-                    new OrderType { OrderTypeID = 5, TypeName = "Online" }
+                    new OrderType (1, "Dine-In"),
+                    new OrderType (2, "Pickup"),
+                    new OrderType (3, "Delivery"),
+                    new OrderType (4, "Catering"),
+                    new OrderType (5, "Online")
                 );
             });
 
@@ -701,11 +701,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.RoleID);
                 entity.Property(e => e.RoleName).IsRequired();
                 entity.HasData(
-                    new Role { RoleID = 1, RoleName = "Admin" },
-                    new Role { RoleID = 2, RoleName = "Manager" },
-                    new Role { RoleID = 3, RoleName = "Employee" },
-                    new Role { RoleID = 4, RoleName = "Supervisor" },
-                    new Role { RoleID = 5, RoleName = "Guest" }
+                    new Role (1, "Admin"),
+                    new Role (2, "Manager"),
+                    new Role (3, "Employee"),
+                    new Role (4, "Supervisor"),
+                    new Role (5, "Guest")
                 );
             });
 
@@ -779,11 +779,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.ShippingMethodTypeID);
                 entity.Property(e => e.MethodName).IsRequired();
                 entity.HasData(
-                    new ShippingMethodType { ShippingMethodTypeID = 1, MethodName = "Air" },
-                    new ShippingMethodType { ShippingMethodTypeID = 2, MethodName = "Ground" },
-                    new ShippingMethodType { ShippingMethodTypeID = 3, MethodName = "Express" },
-                    new ShippingMethodType { ShippingMethodTypeID = 4, MethodName = "Standard" },
-                    new ShippingMethodType { ShippingMethodTypeID = 5, MethodName = "Overnight" }
+                    new ShippingMethodType (1, "Air"),
+                    new ShippingMethodType (2, "Ground"),
+                    new ShippingMethodType (3, "Express"),
+                    new ShippingMethodType (4, "Standard"),
+                    new ShippingMethodType (5, "Overnight")
                 );
             });
 
@@ -825,11 +825,11 @@ namespace MajelMade.Data.Contexts
                 entity.HasKey(e => e.StatusTypeID);
                 entity.Property(e => e.StatusName).IsRequired();
                 entity.HasData(
-                    new StatusType { StatusTypeID = 1, StatusName = "Pending" },
-                    new StatusType { StatusTypeID = 2, StatusName = "Processing" },
-                    new StatusType { StatusTypeID = 3, StatusName = "Shipped" },
-                    new StatusType { StatusTypeID = 4, StatusName = "Delivered" },
-                    new StatusType { StatusTypeID = 5, StatusName = "Cancelled" }
+                    new StatusType (1, "Pending"),
+                    new StatusType (2, "Processing"),
+                    new StatusType (3, "Shipped"),
+                    new StatusType (4, "Delivered"),
+                    new StatusType (5, "Cancelled")
                 );
             });
 

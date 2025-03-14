@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
+﻿namespace MajelMade.Domain.Entities;
 
-namespace MajelMade.Domain.Entities
+public class StorageLocation(int storageLocationID, int roomID, int locationID, Room room, Location location)
 {
-    public class StorageLocation
-    {
-        public int StorageLocationID { get; set; }
-        public int RoomID { get; set; }
-        public int LocationID { get; set; }
+    public int StorageLocationID { get; init; } = storageLocationID;
+    public int RoomID { get; init; } = roomID;
+    public int LocationID { get; init; } = locationID;
 
-        public required Room Room { get; set; }
-        public required Location Location { get; set; }
-        public ICollection<InventoryBatch> InventoryBatches { get; set; } = new List<InventoryBatch>();
-    }
+    public Room Room { get; init; } = room;
+    public Location Location { get; init; } = location;
+    public ICollection<InventoryBatch> InventoryBatches { get; set; } = new List<InventoryBatch>();
 }

@@ -1,13 +1,11 @@
-﻿namespace MajelMade.Domain.Entities
-{
-    public class RecipeEquipment
-    {
-        public int RecipeEquipmentID { get; set; }
-        public int RecipeID { get; set; }
-        public int EquipmentID { get; set; }
-        public string? Notes { get; set; }
+﻿namespace MajelMade.Domain.Entities;
 
-        public required Recipe Recipe { get; set; }
-        public required Equipment Equipment { get; set; }
-    }
+public class RecipeEquipment(int recipeId, int equipmentId, Recipe recipe, Equipment equipment)
+{
+    public int RecipeEquipmentID { get; set; }
+    public int RecipeID { get; set; } = recipeId;
+    public int EquipmentID { get; set; } = equipmentId;
+    public string? Notes { get; set; }
+    public Recipe Recipe { get; set; } = recipe;
+    public Equipment Equipment { get; set; } = equipment;
 }

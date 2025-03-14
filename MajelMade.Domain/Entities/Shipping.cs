@@ -1,20 +1,17 @@
-﻿using System;
+﻿namespace MajelMade.Domain.Entities;
 
-namespace MajelMade.Domain.Entities
+public class Shipping(int shippingID, int orderID, int shippingMethodTypeID, string trackingNumber, DateTime? shippingDate, DateTime? expectedDeliveryDate, decimal shippingCost, int statusTypeID, Order order, ShippingMethodType shippingMethodType, StatusType statusType)
 {
-    public class Shipping
-    {
-        public int ShippingID { get; set; }
-        public int OrderID { get; set; }
-        public int ShippingMethodTypeID { get; set; }
-        public required string TrackingNumber { get; set; }
-        public DateTime? ShippingDate { get; set; }
-        public DateTime? ExpectedDeliveryDate { get; set; }
-        public decimal ShippingCost { get; set; }
-        public int StatusTypeID { get; set; }
+    public int ShippingID { get; init; } = shippingID;
+    public int OrderID { get; init; } = orderID;
+    public int ShippingMethodTypeID { get; init; } = shippingMethodTypeID;
+    public string TrackingNumber { get; init; } = trackingNumber;
+    public DateTime? ShippingDate { get; set; } = shippingDate;
+    public DateTime? ExpectedDeliveryDate { get; set; } = expectedDeliveryDate;
+    public decimal ShippingCost { get; set; } = shippingCost;
+    public int StatusTypeID { get; init; } = statusTypeID;
 
-        public required Order Order { get; set; }
-        public required ShippingMethodType ShippingMethodType { get; set; }
-        public required StatusType StatusType { get; set; }
-    }
+    public Order Order { get; init; } = order;
+    public ShippingMethodType ShippingMethodType { get; init; } = shippingMethodType;
+    public StatusType StatusType { get; init; } = statusType;
 }

@@ -1,9 +1,10 @@
 ﻿namespace MajelMade.Domain.Entities
 {
-    public class EquipmentLogType
+    public class EquipmentLogType(int equipmentLogTypeID, string logTypeName)
     {
-        public int EquipmentLogTypeID { get; set; }
-        public required string LogTypeName { get; set; }
+        public int EquipmentLogTypeID { get; set; } = equipmentLogTypeID;
+        public string LogTypeName { get; set; } = logTypeName;
+
         public ICollection<EquipmentLog> EquipmentLogs { get; set; } = new List<EquipmentLog>();
     }
 }

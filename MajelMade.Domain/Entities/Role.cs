@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
+﻿namespace MajelMade.Domain.Entities;
 
-namespace MajelMade.Domain.Entities
+public class Role(int roleID, string roleName)
 {
-    public class Role
-    {
-        public int RoleID { get; set; }
-        public required string RoleName { get; set; }
-        public ICollection<User> Users { get; set; } = new List<User>();
-    }
+    public int RoleID { get; init; } = roleID;
+    public string RoleName { get; init; } = roleName;
+
+    public ICollection<User> Users { get; init; } = new List<User>();
 }

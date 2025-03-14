@@ -1,9 +1,8 @@
-﻿namespace MajelMade.Domain.Entities
+﻿namespace MajelMade.Domain.Entities;
+
+public class ScannableLabel(int labelID, string barcodeValue, string labelType)
 {
-    public class ScannableLabel
-    {
-        public int LabelID { get; set; }
-        public required string BarcodeValue { get; set; }
-        public required string LabelType { get; set; }
-    }
+    public int LabelID { get; init; } = labelID;
+    public string BarcodeValue { get; init; } = barcodeValue;
+    public string LabelType { get; init; } = labelType;
 }

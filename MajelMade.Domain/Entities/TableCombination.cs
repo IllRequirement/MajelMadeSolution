@@ -1,12 +1,11 @@
-﻿namespace MajelMade.Domain.Entities
-{
-    public class TableCombination
-    {
-        public int TableComboID { get; set; }
-        public int TableID { get; set; }
-        public int CombinedWithTableID { get; set; }
+﻿namespace MajelMade.Domain.Entities;
 
-        public required Table Table { get; set; }
-        public required Table CombinedWithTable { get; set; }
-    }
+public class TableCombination(int tableComboID, int tableID, int combinedWithTableID, Table table, Table combinedWithTable)
+{
+    public int TableComboID { get; init; } = tableComboID;
+    public int TableID { get; init; } = tableID;
+    public int CombinedWithTableID { get; init; } = combinedWithTableID;
+
+    public Table Table { get; init; } = table;
+    public Table CombinedWithTable { get; init; } = combinedWithTable;
 }

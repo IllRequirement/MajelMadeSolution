@@ -1,19 +1,16 @@
-﻿using System;
+﻿namespace MajelMade.Domain.Entities;
 
-namespace MajelMade.Domain.Entities
+public class RecipeStepLog(int recipeStepID, DateTime executionDate, decimal actualTimeMinutes, decimal actualCost, int executedByUserID, string comments, Recipe recipe, RecipeStep recipeStep)
 {
-    public class RecipeStepLog
-    {
-        public int RecipeStepLogID { get; set; }
-        public int RecipeStepID { get; set; }
-        public DateTime ExecutionDate { get; set; }
-        public decimal ActualTimeMinutes { get; set; }
-        public decimal ActualCost { get; set; }
-        public int ExecutedByUserID { get; set; }
-        public required string Comments { get; set; }
+    public int RecipeStepLogID { get; set; }
+    public int RecipeStepID { get; set; } = recipeStepID;
+    public DateTime ExecutionDate { get; set; } = executionDate;
+    public decimal ActualTimeMinutes { get; set; } = actualTimeMinutes;
+    public decimal ActualCost { get; set; } = actualCost;
+    public int ExecutedByUserID { get; set; } = executedByUserID;
+    public string Comments { get; set; } = comments;
 
-        // Navigation property
-        public Recipe Recipe { get; set; } = null!;
-        public required RecipeStep RecipeStep { get; set; }
-    }
+    // Navigation properties
+    public Recipe Recipe { get; set; }
+    public RecipeStep RecipeStep { get; set; }
 }

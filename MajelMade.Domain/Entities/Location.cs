@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-
-namespace MajelMade.Domain.Entities
+﻿namespace MajelMade.Domain.Entities
 {
-    public class Location
+    public class Location(int locationID, string locationName, int scannableLabelID)
     {
-        public int LocationID { get; set; }
-        public required string LocationName { get; set; }
-        public ICollection<StorageLocation> StorageLocations { get; set; } = new List<StorageLocation>();
+        public int LocationID { get; set; } = locationID;
+        public string LocationName { get; set; } = locationName;
+        public int ScannableLabelID { get; set; } = scannableLabelID;
 
-        public int ScannableLabelID { get; set; }
+        public ICollection<StorageLocation> StorageLocations { get; set; } = new List<StorageLocation>();
         public required ScannableLabel ScannableLabel { get; set; }
     }
 }

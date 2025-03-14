@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace MajelMade.Domain.Entities;
 
-namespace MajelMade.Domain.Entities
+public class User(int userID, string username, string passwordHash, string email, DateTime dateCreated, int roleID, Role role)
 {
-    public class User
-    {
-        public int UserID { get; set; }
-        public required string Username { get; set; }
-        public required string PasswordHash { get; set; }
-        public required string Email { get; set; }
-        public DateTime DateCreated { get; set; }
-        public int RoleID { get; set; }
+    public int UserID { get; init; } = userID;
+    public string Username { get; init; } = username;
+    public string PasswordHash { get; init; } = passwordHash;
+    public string Email { get; init; } = email;
+    public DateTime DateCreated { get; init; } = dateCreated;
+    public int RoleID { get; init; } = roleID;
 
-        public required Role Role { get; set; }
-        public ICollection<Employee> Employees { get; set; } = new List<Employee>();
-        public ICollection<Recipe> Recipes { get; set; } = new List<Recipe>();
-        public ICollection<Order> Orders { get; set; } = new List<Order>();
-    }
+    public Role Role { get; init; } = role;
+    public ICollection<Employee> Employees { get; set; } = new List<Employee>();
+    public ICollection<Recipe> Recipes { get; set; } = new List<Recipe>();
+    public ICollection<Order> Orders { get; set; } = new List<Order>();
 }

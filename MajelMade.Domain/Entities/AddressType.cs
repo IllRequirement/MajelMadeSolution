@@ -1,8 +1,9 @@
 ﻿namespace MajelMade.Domain.Entities
 {
-    public class AddressType
+    public class AddressType(int addressTypeID, string typeName)
     {
-        public int AddressTypeID { get; set; }
-        public required string TypeName { get; set; }
+        public int AddressTypeID { get; set; } = addressTypeID;
+        public string TypeName { get; set; } = typeName;
+        private AddressType() : this(0, string.Empty) { }
     }
 }

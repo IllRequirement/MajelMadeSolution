@@ -1,15 +1,13 @@
-﻿using System;
-
-namespace MajelMade.Domain.Entities
+﻿namespace MajelMade.Domain.Entities
 {
-    public class InventoryTransaction
+    public class InventoryTransaction(int transactionID, int inventoryBatchID, int inventoryTransactionTypeID, decimal quantityChange, DateTime transactionDate, string notes)
     {
-        public int TransactionID { get; set; }
-        public int InventoryBatchID { get; set; }
-        public int InventoryTransactionTypeID { get; set; }
-        public decimal QuantityChange { get; set; }
-        public DateTime TransactionDate { get; set; }
-        public required string Notes { get; set; }
+        public int TransactionID { get; set; } = transactionID;
+        public int InventoryBatchID { get; set; } = inventoryBatchID;
+        public int InventoryTransactionTypeID { get; set; } = inventoryTransactionTypeID;
+        public decimal QuantityChange { get; set; } = quantityChange;
+        public DateTime TransactionDate { get; set; } = transactionDate;
+        public string Notes { get; set; } = notes;
 
         public required InventoryBatch InventoryBatch { get; set; }
     }

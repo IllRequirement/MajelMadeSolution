@@ -1,8 +1,7 @@
-﻿namespace MajelMade.Domain.Entities
+﻿namespace MajelMade.Domain.Entities;
+
+public class ShippingMethodType(int shippingMethodTypeID, string methodName)
 {
-    public class ShippingMethodType
-    {
-        public int ShippingMethodTypeID { get; set; }
-        public required string MethodName { get; set; }
-    }
+    public int ShippingMethodTypeID { get; init; } = shippingMethodTypeID;
+    public string MethodName { get; init; } = methodName;
 }

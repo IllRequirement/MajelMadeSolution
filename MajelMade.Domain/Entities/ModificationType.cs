@@ -1,8 +1,8 @@
 ﻿namespace MajelMade.Domain.Entities
 {
-    public class ModificationType
+    public class ModificationType(int modificationTypeID, string modificationName)
     {
-        public int ModificationTypeID { get; set; }
-        public required string ModificationName { get; set; }
+        public int ModificationTypeID { get; set; } = modificationTypeID;
+        public string ModificationName { get; set; } = modificationName;
     }
 }

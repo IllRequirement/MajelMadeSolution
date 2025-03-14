@@ -1,18 +1,17 @@
-﻿namespace MajelMade.Domain.Entities
-{
-    public class SpecialOrderDetail
-    {
-        public int SpecialOrderDetailID { get; set; }
-        public int OrderID { get; set; }
-        public int InventoryID { get; set; }
-        public int ModificationTypeID { get; set; }
-        public decimal Quantity { get; set; }
-        public int MeasurementUnitID { get; set; }
-        public decimal ModificationCost { get; set; }
-        public required string Notes { get; set; }
+﻿namespace MajelMade.Domain.Entities;
 
-        public required Order Order { get; set; }
-        public required Inventory Inventory { get; set; }
-        public required ModificationType ModificationType { get; set; }
-    }
+public class SpecialOrderDetail(int specialOrderDetailID, int orderID, int inventoryID, int modificationTypeID, decimal quantity, int measurementUnitID, decimal modificationCost, string notes, Order order, Inventory inventory, ModificationType modificationType)
+{
+    public int SpecialOrderDetailID { get; init; } = specialOrderDetailID;
+    public int OrderID { get; init; } = orderID;
+    public int InventoryID { get; init; } = inventoryID;
+    public int ModificationTypeID { get; init; } = modificationTypeID;
+    public decimal Quantity { get; init; } = quantity;
+    public int MeasurementUnitID { get; init; } = measurementUnitID;
+    public decimal ModificationCost { get; init; } = modificationCost;
+    public string Notes { get; init; } = notes;
+
+    public Order Order { get; init; } = order;
+    public Inventory Inventory { get; init; } = inventory;
+    public ModificationType ModificationType { get; init; } = modificationType;
 }

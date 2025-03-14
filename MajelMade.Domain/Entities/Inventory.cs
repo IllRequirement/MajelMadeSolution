@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MajelMade.Domain.Entities
+﻿namespace MajelMade.Domain.Entities
 {
-    public class Inventory
+    public class Inventory(int inventoryID, string itemName, int inventoryCategoryID, decimal costPerUnit, int measurementUnitID, DateTime lastUpdated, int userID, string codeID, int? scannableLabelID = null)
     {
-        public int InventoryID { get; set; }
-        public required string ItemName { get; set; }
-        public int InventoryCategoryID { get; set; }
-        public decimal CostPerUnit { get; set; }
-        public int MeasurementUnitID { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public int UserID { get; set; }
-        public required string CodeID { get; set; }
-        public int? ScannableLabelID { get; set; }
+        public int InventoryID { get; set; } = inventoryID;
+        public string ItemName { get; set; } = itemName;
+        public int InventoryCategoryID { get; set; } = inventoryCategoryID;
+        public decimal CostPerUnit { get; set; } = costPerUnit;
+        public int MeasurementUnitID { get; set; } = measurementUnitID;
+        public DateTime LastUpdated { get; set; } = lastUpdated;
+        public int UserID { get; set; } = userID;
+        public string CodeID { get; set; } = codeID;
+        public int? ScannableLabelID { get; set; } = scannableLabelID;
 
-        public required InventoryCategory InventoryCategory { get; set; }
-        public required ScannableLabel ScannableLabel { get; set; }
+        public InventoryCategory InventoryCategory { get; set; }
+        public ScannableLabel? ScannableLabel { get; set; }
         public ICollection<InventoryBatch> InventoryBatches { get; set; } = new List<InventoryBatch>();
     }
 }

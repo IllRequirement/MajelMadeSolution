@@ -52,17 +52,17 @@ namespace MajelMade.BusinessLogic.Services
             }
 
             // Create the OrderStatusHistory record, setting its required navigation properties.
-            var statusHistory = new OrderStatusHistory
-            {
-                OrderID = orderId,
-                StatusTypeID = newStatusTypeId,
-                UpdatedDateTime = DateTime.UtcNow,
-                Notes = "Status updated via OrderService",
-                Order = order,
-                StatusType = statusType
-            };
+            //var statusHistory = new OrderStatusHistory
+            //{
+            //    OrderID = orderId,
+            //    StatusTypeID = newStatusTypeId,
+            //    UpdatedDateTime = DateTime.UtcNow,
+            //    Notes = "Status updated via OrderService",
+            //    Order = order,
+            //    StatusType = statusType
+            //};
 
-            await _orderStatusHistoryRepository.AddAsync(statusHistory);
+            //await _orderStatusHistoryRepository.AddAsync(statusHistory);
             await _orderStatusHistoryRepository.SaveAsync();
         }
     }

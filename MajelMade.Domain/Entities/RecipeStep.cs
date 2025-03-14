@@ -1,15 +1,22 @@
 ﻿namespace MajelMade.Domain.Entities
 {
-    public class RecipeStep
+    public class RecipeStep(int recipeStepId, int recipeId, int stepNumber, string description)
     {
-        public int RecipeStepID { get; set; }
-        public int RecipeID { get; set; }
-        public int StepNumber { get; set; }
-        public required string Description { get; set; }
+        // Primary constructor properties initialization
+        public int RecipeStepID { get; set; } = recipeStepId;
+        public int RecipeID { get; set; } = recipeId;
+        public int StepNumber { get; set; } = stepNumber;
+        public string Description { get; set; } = description;
+
+        // Parameterless constructor for EF Core
+        public RecipeStep() : this(0, 0, 0, string.Empty) { }
+
         public decimal EstimatedTimeMinutes { get; set; }
         public decimal EstimatedCost { get; set; }
         public string? AdditionalNotes { get; set; }
-        public ICollection<RecipeStep> RecipeSteps { get; set; } = new List<RecipeStep>();
+
+        // Navigation properties
         public required Recipe Recipe { get; set; }
+        public ICollection<RecipeStepLog> RecipeStepLogs { get; set; } = new List<RecipeStepLog>();
     }
 }
